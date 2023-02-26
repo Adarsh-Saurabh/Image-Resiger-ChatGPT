@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Uploader</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+
+    <style>
+      .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: -1;
+      }
+
+      input[type="file"],
+      input[type="text"],
+      button {
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="file" id="file-input" />
+      <input type="text" id="width-input" placeholder="New width (px)">
+      <input type="text" id="height-input" placeholder="New height (px)">
+      <button onclick="uploadImage()">Upload</button>
+      <img id="preview" />
+      <a id="download-link" download="resized-image.png" style="display: none;">Download</a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
